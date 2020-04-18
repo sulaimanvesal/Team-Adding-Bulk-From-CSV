@@ -20,9 +20,10 @@ To access the Teams, we need TeamID, how to get:
 Everything is done, now we need to create a csv file:
         
         a.	Column name should be: email
-        b.	Each row should have the following email address: ec09ypaf@fauad.fau.de
+        b.	Each row should have the following email address: test@test.de
         c.	Save it as test.csv
 To add the members to channel e.g. TestChan we need to run the following command:
 
-    'Import-Csv -Path "test.csv" | foreach{Add-TeamChannelUser -GroupId b6bb4238-b333-4b30-97c2-376a35b96220 -DisplayName "TestChan" -user $_.email}'
+    'Import-Csv -Path "test.csv" | foreach{Add-TeamChannelUser -GroupId xxxxxxxxxxxxxxxxxx -DisplayName "ChannelName" -user $_.email}'
+
 Done. Now the users should be a member of TestChan
