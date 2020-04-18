@@ -5,18 +5,18 @@ How to proceed:
     Open **Windows PowerShell** by running as **Administrator** 
     To see the modules: 
    
-    'get-module | ft name, version' 
+    get-module | ft name, version 
    
    To use Add-TeamChannelUser command, before installing **MicorsoftTeams (1.0.18)** package we need to add external package library as following:
     
-      'Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com''
-      'Get-PSRepository | Fl'
+      Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com'
+      Get-PSRepository | Fl'
 Now you can install the desired version of MicrosoftTeams  (Adding bulk users to channel works on 1.0.18v above)
       
-      'Install-Module MicrosoftTeams –RequiredVersion 1.0.20'
+      Install-Module MicrosoftTeams –RequiredVersion 1.0.20
 To access the Teams, we need TeamID, how to get:
       
-      'Get-Team -DisplayName "Deep Learning Exercises (SoSe20)"'
+      Get-Team -DisplayName "TeamName (whatever name you have in your teams)"
 Everything is done, now we need to create a csv file:
         
         a.	Column name should be: email
