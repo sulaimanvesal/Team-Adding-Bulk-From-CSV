@@ -1,1 +1,21 @@
 # Team-Adding-Bulk-From-CSV
+
+Adding Bulk members using a CSV file:
+How to proceed:
+1.	Open **Windows PowerShell** by running as **Administrator 
+2.	To see the modules: 
+get-module | ft name, version 
+3.	To use Add-TeamChannelUser command, before installing MicorsoftTeams (1.0.18) package we need to add external package library as following:
+a.	Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com' 
+b.	Get-PSRepository | Fl
+4.	Now you can install the desired version of MicrosoftTeams  (Adding bulk users to channel works on 1.0.18v above)
+a.	Install-Module MicrosoftTeams –RequiredVersion 1.0.20
+5.	To access the Teams, we need TeamID, how to get:
+a.	Get-Team -DisplayName "Deep Learning Exercises (SoSe20)"
+6.	Everything is done, now we need to create a csv file:
+a.	Column name should be: email
+b.	Each row should have the following email address: ec09ypaf@fauad.fau.de
+c.	Save it as test.csv
+7.	To add the members to channel e.g. TestChan we need to run the following command:
+a.	Import-Csv -Path "test.csv" | foreach{Add-TeamChannelUser -GroupId b6bb4238-b333-4b30-97c2-376a35b96220 -DisplayName "TestChan" -user $_.email} 
+8.	Done. Now the users should be a member of TestChan
