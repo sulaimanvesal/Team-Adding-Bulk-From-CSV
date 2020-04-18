@@ -2,11 +2,14 @@
 
 Adding Bulk members using a CSV file:
 How to proceed:
-1.	Open **Windows PowerShell** by running as **Administrator 
-2.	To see the modules: 
-get-module | ft name, version 
-3.	To use Add-TeamChannelUser command, before installing MicorsoftTeams (1.0.18) package we need to add external package library as following:
-a.	Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com' 
+    Open **Windows PowerShell** by running as **Administrator** 
+    To see the modules: 
+    '''
+     get-module | ft name, version 
+    '''
+   
+    To use Add-TeamChannelUser command, before installing **MicorsoftTeams (1.0.18)** package we need to add external package library as following:
+      'Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com''
 b.	Get-PSRepository | Fl
 4.	Now you can install the desired version of MicrosoftTeams  (Adding bulk users to channel works on 1.0.18v above)
 a.	Install-Module MicrosoftTeams –RequiredVersion 1.0.20
