@@ -10,13 +10,14 @@ How to proceed:
    To use Add-TeamChannelUser command, before installing **MicorsoftTeams (1.0.18)** package we need to add external package library as following:
     
       Register-PSRepository –Name '_TempTestRepo' –SourceLocation 'https://www.poshtestgallery.com'
-      Get-PSRepository | Fl'
+      
+      Get-PSRepository | Fl
 Now you can install the desired version of MicrosoftTeams  (Adding bulk users to channel works on 1.0.18v above)
       
       Install-Module MicrosoftTeams –RequiredVersion 1.0.20
 To access the Teams, we need TeamID, how to get:
       
-      Get-Team -DisplayName "TeamName (whatever name you have in your teams)"
+      Get-Team -DisplayName "TestTeam"
 Everything is done, now we need to create a csv file:
         
         a.	Column name should be: email
